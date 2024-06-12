@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Navbar.css'
 import { FaFacebookSquare } from "react-icons/fa";
 import { PiInstagramLogoFill } from "react-icons/pi";
@@ -8,6 +8,15 @@ import rasm from '../../assets/img/лого.png'
 import { MdOutlineLocationOn } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 const Navbar = () => {
+    const [fix, setFix] = useState(false);
+    function setFixd() {
+        if (window.scrollY >= 5) {
+          setFix(true);
+        } else {
+          setFix(false);
+        }
+      }
+      window.addEventListener('scroll', setFixd);
     return (
         <div>
             <div className="header_top">
@@ -56,7 +65,7 @@ const Navbar = () => {
    </div>
    </div>
             </div>
-            <header>
+            <header  className={fix ? 'header_link fixed' : 'header_link'}>
                 <nav className='container'>
                     <ul className='ul_link'>
                         <li>

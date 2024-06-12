@@ -2,7 +2,7 @@ import React from 'react';
 import './Main.css'
 import Product from '../Product/Product';
 
-const Main = () => {
+const Main = ({data}) => {
     return (
         <div>
             <main>
@@ -22,7 +22,7 @@ const Main = () => {
             <div className="teg">
                 <h1>Готовые наборы</h1>
             </div>
-            <Product/>
+            <Product btn={data}/>
         </div>
             </main>
         </div>
